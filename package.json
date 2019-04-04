@@ -1,0 +1,29 @@
+{
+  "name": "mantha-build-config",
+  "version": "1.0.0",
+  "description": "",
+  "main": "rolled/index.js",
+  "scripts": {
+    "compile": "tsc",
+    "roll": "rollup compiled/index.js --output.format umd --output.file rolled/index.js --name ManthaBuildConfig",
+    "full": "npm run compile && npm run roll",
+    "preversion": "npm run full",
+    "patch": "npm version patch && npm publish",
+    "minor": "npm version minor && npm publish",
+    "major": "npm version major && npm publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ke-mantha/mantha-build-config.git"
+  },
+  "author": "kaskar2008",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ke-mantha/mantha-build-config/issues"
+  },
+  "homepage": "https://github.com/ke-mantha/mantha-build-config#readme",
+  "dependencies": {
+    "rollup": "^1.8.0",
+    "typescript": "^3.4.1"
+  }
+}
